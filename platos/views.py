@@ -6,7 +6,7 @@ from .serializers import ActualizarPlatosSerializer, CrearPlatosSerializer, Elim
 from .models import Platos
 from rest_framework import status
 # agregado
-from rest_framework.permissions import IsAuthenticated
+# from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
@@ -28,7 +28,7 @@ class PruebaPlatosView(ListAPIView):
 class PlatosView(ListAPIView):
     queryset=Platos.objects.all()
     serializer_class=PlatosSerializer
-    permission_classes=[IsAuthenticated]
+    # permission_classes=[IsAuthenticated]
     def get(self,request):
         platos=self.get_queryset()        
         platoSerializado= self.serializer_class(instance=platos,many=True)

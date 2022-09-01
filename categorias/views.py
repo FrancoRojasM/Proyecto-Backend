@@ -6,7 +6,7 @@ from .serializers import ActualizarCategoriaSerializer, CategoriaSerializer, Cre
 from .models import Categoria
 from rest_framework import status
 # agregado
-from rest_framework.permissions import IsAuthenticated
+# from rest_framework.permissions import IsAuthenticated
 
 @api_view(http_method_names=['GET','POST','PUT','DELETE'])
 def inicio(request:Request):
@@ -27,7 +27,7 @@ class CategoriasView(ListAPIView):
     queryset=Categoria.objects.all()
     serializer_class=CategoriaSerializer
     # agreagdo
-    permission_classes=[IsAuthenticated]
+    # permission_classes=[IsAuthenticated]
     def get(self,request):
         categorias=self.get_queryset()
         categoriaSerializada= self.serializer_class(instance=categorias,many=True)
